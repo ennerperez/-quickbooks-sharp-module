@@ -1,5 +1,4 @@
 ﻿using System;
-using QuickBooks.Interfaces;
 using QuickBooks.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,10 +10,6 @@ namespace QuickBooks
         {
             services.AddHttpClient<QuickBooksService>("QuickBooksService");
             services.AddSingleton<Factory>().Configure(configureOptions);
-
-            services.AddSingleton<IBookService, BookService>().Configure(configureOptions);
-            services.AddSingleton<ICampaignService, CampaignService>().Configure(configureOptions);
-            services.AddSingleton<ISubscriptionService, SubscriptionService>().Configure(configureOptions);
 
             services.AddSingleton<Wrapper>();
 
